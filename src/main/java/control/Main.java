@@ -87,7 +87,7 @@ public class Main {
 		
 
 		 List<Nodes> randomFromGraph = graphCon.get20RandomIndexes();
-		 System.out.println("RANDOM GRAPH AND SQL");
+		 System.out.println("RANDOM GRAPH");
 		 for (Nodes graphPerson : randomFromGraph) {
 		 printPerson(graphPerson);
 		 }
@@ -104,7 +104,7 @@ public class Main {
 			randomFromSQL.add(p);
 
 		}
-		System.out.println("------------------20 RANDOM USING SQL - POSTGRESQL------------------");
+		System.out.println("RANDOM SQL");
 		for (Nodes sqlPerson : randomFromSQL) {
 			System.out.println(sqlPerson);
 		}
