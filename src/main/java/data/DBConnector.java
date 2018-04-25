@@ -23,7 +23,4 @@ public class DBConnector {
         return this.connection;
 }
 
-    public String getName() {
-        return "SQL - PostGreSQL";
-}
 }
