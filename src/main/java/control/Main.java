@@ -8,29 +8,29 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 		List<Nodes> list = new ArrayList();
-		DBMapperSQL mapper = new DBMapperSQL(new DBConnectorSQL());
+		DBMapperSQL mapper = new DBMapperSQL(new DBConnector());
 		Nodes p = mapper.getRandom(5);
-		list = mapper.getAllPersonsDepthOne("Rossana Gunsolley");
+		list = mapper.depthOne("Rossana Gunsolley");
 		for (Nodes nodes : list) {
 			System.out.println(nodes.getName());
 		}
 		System.out.println("-----------------");
-		list = mapper.getAllPersonsDepthTwo("Rossana Gunsolley");
+		list = mapper.depthTwo("Rossana Gunsolley");
 		for (Nodes nodes : list) {
 			System.out.println(nodes.getName());
 		}
 		System.out.println("-----------------");
-		list = mapper.getAllPersonsDepthThree("Rossana Gunsolley");
+		list = mapper.depthThree("Rossana Gunsolley");
 		for (Nodes nodes : list) {
 			System.out.println(nodes.getName());
 		}
 		System.out.println("-----------------");
-		list = mapper.getAllPersonsDepthFour("Rossana Gunsolley");
+		list = mapper.depthFour("Rossana Gunsolley");
 		for (Nodes nodes : list) {
 			System.out.println(nodes.getName());
 		}
 		System.out.println("-----------------");
-		list = mapper.getAllPersonsDepthFive("Rossana Gunsolley");
+		list = mapper.depthFive("Rossana Gunsolley");
 		for (Nodes nodes : list) {
 			System.out.println(nodes.getName());
 		}
