@@ -16,25 +16,6 @@ public class DBMapperSQL implements IMapper{
 		this.sqlCon = sqlCon;
 	}
 
-	public Nodes getRandom(int id) {
-		Nodes p = null;
-
-		try {
-			Connection connection = this.sqlCon.getConnection();
-			Statement stmt = connection.createStatement();
-			String query = "SELECT * FROM Nodes WHERE id ='" + id + "' ";
-			ResultSet res = stmt.executeQuery(query);
-			while (res.next()) {
-				String name = res.getString("name");
-				String job = res.getString("job");
-				String bday = res.getString("birthday");
-				p = new Nodes(id + "", name, job, bday);
-			}
-		} catch (Exception e) {
-			System.out.println(e.toString());
-		}
-		return p;
-	}
 
 	public List<Nodes> getAll() {
 		List<Nodes> list = new ArrayList();
@@ -132,6 +113,26 @@ public class DBMapperSQL implements IMapper{
 		return list;
 	}
 
+//	public Nodes getRandom(int id) {
+//		Nodes p = null;
+//
+//		try {
+//			Connection connection = this.sqlCon.getConnection();
+//			Statement stmt = connection.createStatement();
+//			String query = "SELECT * FROM Nodes WHERE id ='" + id + "' ";
+//			ResultSet res = stmt.executeQuery(query);
+//			while (res.next()) {
+//				String name = res.getString("name");
+//				String job = res.getString("job");
+//				String bday = res.getString("birthday");
+//				p = new Nodes(id + "", name, job, bday);
+//			}
+//		} catch (Exception e) {
+//			System.out.println(e.toString());
+//		}
+//		return p;
+//	}
+	
 	private List<Nodes> getResults(ResultSet res) throws SQLException {
 		List<Nodes> list = new ArrayList();
 		while (res.next()) {
@@ -144,4 +145,5 @@ public class DBMapperSQL implements IMapper{
 		}
 		return list;
 	}
+	
 }
