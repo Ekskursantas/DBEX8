@@ -87,7 +87,7 @@ public class Main {
 		
 
 		 List<Nodes> randomFromGraph = graphCon.get20RandomIndexes();
-		 System.out.println("------------------20 RANDOM USING GRAPH - NEO4J------------------");
+		 System.out.println("RANDOM GRAPH AND SQL");
 		 for (Nodes graphPerson : randomFromGraph) {
 		 printPerson(graphPerson);
 		 }
@@ -109,32 +109,9 @@ public class Main {
 			System.out.println(sqlPerson);
 		}
 
-		// display();
 
 	}
 
-	// private static void display() {
-	//
-	// String format = "%-20s%-20s%-20s\n";
-	// // System.out.printf("%-35s%-20s%-20s\n", "", "PostGreSQL", "Neo4J");
-	// System.out.printf("%-20s%-20s%-20s\n", "", "PostGreSQL Time", "Neo4J Time");
-	//
-	// String[] depthsname = new String[5];
-	// depthsname[0] = "one";
-	// depthsname[1] = "two";
-	// depthsname[2] = "three";
-	// depthsname[3] = "four";
-	// depthsname[4] = "five";
-	//
-	// DepthMeasure mes = new DepthMeasure();
-	// double ave1 = mes.getAverage(sqlResTime);
-	//
-	// for (int i = 0; i < 5; i++) {
-	// String prefix = "Depth " + depthsname[i];
-	// System.out.printf(format, prefix, sqlResTime.get(i), graphResTime.get(i));
-	// }
-	//
-	// }
 
 	private static void printPerson(Nodes p) {
 		String format = "%-15s%-30s%-40s%-20s\n";
