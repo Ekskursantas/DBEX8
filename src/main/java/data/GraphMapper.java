@@ -30,7 +30,7 @@
 	            list = getResults(result);
 	            session.close();
 	        } catch (Exception e) {
-	            System.out.println("ERROR FOUND IN getAllNodessDepthOne" + e.toString());
+	            System.out.println(e.toString());
 	        }
 	        return list;
 	    }
@@ -46,7 +46,7 @@
 	            list = getResults(result);
 	            session.close();
 	        } catch (Exception e) {
-	            System.out.println("ERROR FOUND IN getAllNodessDepthOne" + e.toString());
+	            System.out.println(e.toString());
 	        }
 	        return list;
 	    }
@@ -62,7 +62,7 @@
 	            list = getResults(result);
 	            session.close();
 	        } catch (Exception e) {
-	            System.out.println("ERROR FOUND IN getAllNodessDepthTwo" + e.toString());
+	            System.out.println(e.toString());
 	        }
 	        return list;
 	    }
@@ -80,7 +80,7 @@
 	            session.close();
 
 	        } catch (Exception e) {
-	            System.out.println("ERROR FOUND IN getAllNodessDepthThree" + e.toString());
+	            System.out.println(e.toString());
 	        }
 	        return list;
 
@@ -97,7 +97,7 @@
 	            list = getResults(result);
 	            session.close();
 	        } catch (Exception e) {
-	            System.out.println("ERROR FOUND IN getAllNodessDepthFour" + e.toString());
+	            System.out.println(e.toString());
 	        }
 	        return list;
 	    }
@@ -114,7 +114,7 @@
 	            list = getResults(result);
 	            session.close();
 	        } catch (Exception e) {
-	            System.out.println("ERROR FOUND IN getAllNodessDepthFive" + e.toString());
+	            System.out.println(e.toString());
 	        }
 	        return list;
 	    }
@@ -129,7 +129,6 @@
 	        list = getResults(result);
 	        session.close();
 	        graphCon.closeDriver();
-	        System.out.println("DONE");
 
 	        return list;
 

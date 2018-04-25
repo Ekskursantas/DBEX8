@@ -15,7 +15,6 @@ public class DBGraph {
 	    public static Driver getInstance() {
 	        try{
 	        if (instance == null) {
-	            System.out.println("SUCCESS");
 	            instance = GraphDatabase.driver(url, AuthTokens.basic( username, password));;
 	        }
 	        }catch(Exception e){

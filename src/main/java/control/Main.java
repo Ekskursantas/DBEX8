@@ -16,74 +16,103 @@ public class Main {
 		DBMapperSQL sqlCon = new DBMapperSQL(new DBConnector());
 		GraphMapper graphCon = new GraphMapper(new DBGraph());
 		List<Nodes> sqlPersons = sqlCon.getAll();
-
+		long startTime;
+		long endTime;
+		long totalTime;
 		System.out.println("DEPTH ONE");
 
-		// MYSQL
-		long startTime = System.nanoTime();
-		List<Nodes> depth1Sql = sqlCon.depthOne("Rossana Gunsolley");
-		long endTime = System.nanoTime();
-		long totalTime = endTime - startTime;
-		sqlDepthTimer.add(totalTime);
+//		// MYSQL
+//		startTime = System.nanoTime();
+//		List<Nodes> depth1Sql = sqlCon.depthOne("Shaunda Gabay");
+//		endTime = System.nanoTime();
+//		totalTime = (endTime - startTime)/1000000;
+//		sqlDepthTimer.add(totalTime);
 
 		// GRAPH;
 		startTime = System.nanoTime();
-		List<Nodes> depth1Grpah = graphCon.depthOne("Rossana Gunsolley");
+		List<Nodes> depth1Graph = graphCon.depthOne("Shaunda Gabay");
 		endTime = System.nanoTime();
-		totalTime = endTime - startTime;
+		totalTime = (endTime - startTime)/1000000;
+		
 		graphDepthTimer.add(totalTime);
-
+		for (Nodes nodes : depth1Graph) {
+			printPerson(nodes);
+		}
+		System.out.println(totalTime);
+//		System.out.println("SQL TIMER " + sqlDepthTimer.get(0) + "MS" + " GRAPH TIMER " + graphDepthTimer.get(0) + "MS");
+		
 		System.out.println("DEPTH TWO");
-		startTime = System.nanoTime();
-		List<Nodes> depth2Sql = sqlCon.depthTwo("Rossana Gunsolley");
-		endTime = System.nanoTime();
-		totalTime = endTime - startTime;
-		sqlDepthTimer.add(totalTime);
+//		startTime = System.nanoTime();
+//		List<Nodes> depth2Sql = sqlCon.depthTwo("Shaunda Gabay");
+//		endTime = System.nanoTime();
+//		totalTime = (endTime - startTime)/1000000;
+//		sqlDepthTimer.add(totalTime);
 
 		startTime = System.nanoTime();
-		List<Nodes> depth2Grpah = graphCon.depthTwo("Rossana Gunsolley");
+		List<Nodes> depth2Graph = graphCon.depthTwo("Shaunda Gabay");
 		endTime = System.nanoTime();
-		totalTime = endTime - startTime;
+		totalTime = (endTime - startTime)/1000000;
+		
 		graphDepthTimer.add(totalTime);
-
+		for (Nodes nodes : depth2Graph) {
+			printPerson(nodes);
+		}
+		System.out.println(totalTime);
+//		System.out.println("SQL TIMER " + sqlDepthTimer.get(1) + "MS" + " GRAPH TIMER " + graphDepthTimer.get(1) + "MS");
+		
 		System.out.println("DEPTH THREE");
-		startTime = System.nanoTime();
-		List<Nodes> depth3Sql = sqlCon.depthThree("Rossana Gunsolley");
-		endTime = System.nanoTime();
-		totalTime = endTime - startTime;
-		sqlDepthTimer.add(totalTime);
+//		startTime = System.nanoTime();
+//		List<Nodes> depth3Sql = sqlCon.depthThree("Shaunda Gabay");
+//		endTime = System.nanoTime();
+//		totalTime = (endTime - startTime)/1000000;
+//		sqlDepthTimer.add(totalTime);
 
 		startTime = System.nanoTime();
-		List<Nodes> depth3Grpah = graphCon.depthThree("Rossana Gunsolley");
+		List<Nodes> depth3Graph = graphCon.depthThree("Shaunda Gabay");
 		endTime = System.nanoTime();
-		totalTime = endTime - startTime;
+		totalTime = (endTime - startTime)/1000000;
 		graphDepthTimer.add(totalTime);
-
+		for (Nodes nodes : depth3Graph) {
+			printPerson(nodes);
+		}
+		System.out.println(totalTime);
+//		System.out.println("SQL TIMER " + sqlDepthTimer.get(2) + "MS" + " GRAPH TIMER " + graphDepthTimer.get(2) + "MS");
+		
 		System.out.println("DEPTH FOUR");
-		startTime = System.nanoTime();
-		List<Nodes> depth4Sql = sqlCon.depthFour("Rossana Gunsolley");
-		endTime = System.nanoTime();
-		totalTime = endTime - startTime;
-		sqlDepthTimer.add(totalTime);
+//		startTime = System.nanoTime();
+//		List<Nodes> depth4Sql = sqlCon.depthFour("Shaunda Gabay");
+//		endTime = System.nanoTime();
+//		totalTime = (endTime - startTime)/1000000;
+//		sqlDepthTimer.add(totalTime);
 
 		startTime = System.nanoTime();
-		List<Nodes> depth4Grpah = graphCon.depthFour("Rossana Gunsolley");
+		List<Nodes> depth4Graph = graphCon.depthFour("Shaunda Gabay");
 		endTime = System.nanoTime();
-		totalTime = endTime - startTime;
+		totalTime = (endTime - startTime)/1000000;
 		graphDepthTimer.add(totalTime);
-
+		for (Nodes nodes : depth4Graph) {
+			printPerson(nodes);
+		}
+		System.out.println(totalTime);
+//		System.out.println("SQL TIMER " + sqlDepthTimer.get(3) + "MS" + " GRAPH TIMER " + graphDepthTimer.get(3) + "MS");
+		
 		System.out.println("DEPTH FIVE");
-		startTime = System.nanoTime();
-		List<Nodes> depth5Sql = sqlCon.depthFive("Rossana Gunsolley");
-		endTime = System.nanoTime();
-		totalTime = endTime - startTime;
-		sqlDepthTimer.add(totalTime);
+//		startTime = System.nanoTime();
+//		List<Nodes> depth5Sql = sqlCon.depthFive("Shaunda Gabay");
+//		endTime = System.nanoTime();
+//		totalTime = (endTime - startTime)/1000000;
+//		sqlDepthTimer.add(totalTime);
 
-		startTime = System.nanoTime();
-		List<Nodes> depth5Grpah = graphCon.depthFive("Rossana Gunsolley");
-		endTime = System.nanoTime();
-		totalTime = endTime - startTime;
-		graphDepthTimer.add(totalTime);
+//		startTime = System.nanoTime();
+//		List<Nodes> depth5Graph = graphCon.depthFive("Shaunda Gabay");
+//		endTime = System.nanoTime();
+//		totalTime = (endTime - startTime)/1000000;
+//		graphDepthTimer.add(totalTime);
+//		for (Nodes nodes : depth5Graph) {
+//			printPerson(nodes);
+//		}
+//		System.out.println(totalTime);
+//		System.out.println("SQL TIMER " + sqlDepthTimer.get(4) + "MS" + " GRAPH TIMER " + graphDepthTimer.get(4) + "MS");
 		
 
 		 List<Nodes> randomFromGraph = graphCon.get20RandomIndexes();
@@ -106,7 +135,7 @@ public class Main {
 		}
 		System.out.println("RANDOM SQL");
 		for (Nodes sqlPerson : randomFromSQL) {
-			System.out.println(sqlPerson);
+			printPerson(sqlPerson);
 		}
 
 
@@ -128,27 +157,27 @@ public class Main {
 	// }
 
 	// Nodes p = mapper.getRandom(5);
-	// list = mapper.depthOne("Rossana Gunsolley");
+	// list = mapper.depthOne("Shaunda Gabay");
 	// for (Nodes nodes : list) {
 	// System.out.println(nodes.getName());
 	// }
 	// System.out.println("-----------------");
-	// list = mapper.depthTwo("Rossana Gunsolley");
+	// list = mapper.depthTwo("Shaunda Gabay");
 	// for (Nodes nodes : list) {
 	// System.out.println(nodes.getName());
 	// }
 	// System.out.println("-----------------");
-	// list = mapper.depthThree("Rossana Gunsolley");
+	// list = mapper.depthThree("Shaunda Gabay");
 	// for (Nodes nodes : list) {
 	// System.out.println(nodes.getName());
 	// }
 	// System.out.println("-----------------");
-	// list = mapper.depthFour("Rossana Gunsolley");
+	// list = mapper.depthFour("Shaunda Gabay");
 	// for (Nodes nodes : list) {
 	// System.out.println(nodes.getName());
 	// }
 	// System.out.println("-----------------");
-	// list = mapper.depthFive("Rossana Gunsolley");
+	// list = mapper.depthFive("Shaunda Gabay");
 	// for (Nodes nodes : list) {
 	// System.out.println(nodes.getName());
 	// }
