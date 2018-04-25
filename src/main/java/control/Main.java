@@ -9,8 +9,8 @@ import java.util.Random;
 
 public class Main {
 
-	private static ArrayList<Long> sqlResTime = new ArrayList<Long>();
-	private static ArrayList<Long> graphResTime = new ArrayList<Long>();
+	private static ArrayList<Long> sqlDepthTimer = new ArrayList<Long>();
+	private static ArrayList<Long> graphDepthTimer = new ArrayList<Long>();
 
 	public static void main(String[] args) throws Exception {
 		DBMapperSQL sqlCon = new DBMapperSQL(new DBConnector());
@@ -24,66 +24,66 @@ public class Main {
 		List<Nodes> depth1Sql = sqlCon.depthOne("Rossana Gunsolley");
 		long endTime = System.nanoTime();
 		long totalTime = endTime - startTime;
-		sqlResTime.add(totalTime);
+		sqlDepthTimer.add(totalTime);
 
 		// GRAPH;
 		startTime = System.nanoTime();
 		List<Nodes> depth1Grpah = graphCon.depthOne("Rossana Gunsolley");
 		endTime = System.nanoTime();
 		totalTime = endTime - startTime;
-		graphResTime.add(totalTime);
+		graphDepthTimer.add(totalTime);
 
 		System.out.println("DEPTH TWO");
 		startTime = System.nanoTime();
 		List<Nodes> depth2Sql = sqlCon.depthTwo("Rossana Gunsolley");
 		endTime = System.nanoTime();
 		totalTime = endTime - startTime;
-		sqlResTime.add(totalTime);
+		sqlDepthTimer.add(totalTime);
 
 		startTime = System.nanoTime();
 		List<Nodes> depth2Grpah = graphCon.depthTwo("Rossana Gunsolley");
 		endTime = System.nanoTime();
 		totalTime = endTime - startTime;
-		graphResTime.add(totalTime);
+		graphDepthTimer.add(totalTime);
 
 		System.out.println("DEPTH THREE");
 		startTime = System.nanoTime();
 		List<Nodes> depth3Sql = sqlCon.depthThree("Rossana Gunsolley");
 		endTime = System.nanoTime();
 		totalTime = endTime - startTime;
-		sqlResTime.add(totalTime);
+		sqlDepthTimer.add(totalTime);
 
 		startTime = System.nanoTime();
 		List<Nodes> depth3Grpah = graphCon.depthThree("Rossana Gunsolley");
 		endTime = System.nanoTime();
 		totalTime = endTime - startTime;
-		graphResTime.add(totalTime);
+		graphDepthTimer.add(totalTime);
 
 		System.out.println("DEPTH FOUR");
 		startTime = System.nanoTime();
 		List<Nodes> depth4Sql = sqlCon.depthFour("Rossana Gunsolley");
 		endTime = System.nanoTime();
 		totalTime = endTime - startTime;
-		sqlResTime.add(totalTime);
+		sqlDepthTimer.add(totalTime);
 
 		startTime = System.nanoTime();
 		List<Nodes> depth4Grpah = graphCon.depthFour("Rossana Gunsolley");
 		endTime = System.nanoTime();
 		totalTime = endTime - startTime;
-		graphResTime.add(totalTime);
+		graphDepthTimer.add(totalTime);
 
 		System.out.println("DEPTH FIVE");
 		startTime = System.nanoTime();
 		List<Nodes> depth5Sql = sqlCon.depthFive("Rossana Gunsolley");
 		endTime = System.nanoTime();
 		totalTime = endTime - startTime;
-		sqlResTime.add(totalTime);
+		sqlDepthTimer.add(totalTime);
 
 		startTime = System.nanoTime();
 		List<Nodes> depth5Grpah = graphCon.depthFive("Rossana Gunsolley");
 		endTime = System.nanoTime();
 		totalTime = endTime - startTime;
-		graphResTime.add(totalTime);
+		graphDepthTimer.add(totalTime);
 		
 
 		 List<Nodes> randomFromGraph = graphCon.get20RandomIndexes();
