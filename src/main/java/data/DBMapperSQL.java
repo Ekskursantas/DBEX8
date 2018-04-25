@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import model.Nodes;
 import java.util.List;
 
-public class DBMapperSQL implements IMapper {
+public class DBMapperSQL implements IMapper{
 
-	private DBConnectorSQL sqlCon;
+	private DBConnector sqlCon;
 
-	public DBMapperSQL(DBConnectorSQL sqlCon) {
+	public DBMapperSQL(DBConnector sqlCon) {
 		this.sqlCon = sqlCon;
 	}
 
@@ -31,7 +31,7 @@ public class DBMapperSQL implements IMapper {
 				p = new Nodes(id + "", name, job, bday);
 			}
 		} catch (Exception e) {
-			System.out.println("ERROR FOUND IN getRandom" + e.toString());
+			System.out.println(e.toString());
 		}
 		return p;
 	}
@@ -46,16 +46,13 @@ public class DBMapperSQL implements IMapper {
 			ResultSet res = stmt.executeQuery(query);
 			list = this.getResults(res);
 		} catch (Exception e) {
-			System.out.println("ERROR FOUND IN getAll " + e.toString());
+			System.out.println(e.toString());
 		}
 		return list;
 	}
 
-	public String getName() {
-		return sqlCon.getName();
-	}
-
-	public List<Nodes> getAllPersonsDepthOne(String name) {
+	
+	public List<Nodes> depthOne(String name) {
 		List<Nodes> list = new ArrayList();
 
 		try {
@@ -66,12 +63,12 @@ public class DBMapperSQL implements IMapper {
 			ResultSet res = stmt.executeQuery(query);
 			list = this.getResults(res);
 		} catch (Exception e) {
-			System.out.println("ERROR FOUND IN getAllPersonsDepthOne" + e.toString());
+			System.out.println(e.toString());
 		}
 		return list;
 	}
 
-	public List<Nodes> getAllPersonsDepthTwo(String name) {
+	public List<Nodes> depthTwo(String name) {
 		List<Nodes> list = new ArrayList();
 		try {
 			Connection connection = this.sqlCon.getConnection();
@@ -81,12 +78,12 @@ public class DBMapperSQL implements IMapper {
 			ResultSet res = stmt.executeQuery(query);
 			list = this.getResults(res);
 		} catch (Exception e) {
-			System.out.println("ERROR FOUND IN getAllPersonsDepthTwo" + e.toString());
+			System.out.println(e.toString());
 		}
 		return list;
 	}
 
-	public List<Nodes> getAllPersonsDepthThree(String name) {
+	public List<Nodes> depthThree(String name) {
 		List<Nodes> list = new ArrayList();
 		try {
 			Connection connection = this.sqlCon.getConnection();
@@ -96,12 +93,12 @@ public class DBMapperSQL implements IMapper {
 			ResultSet res = stmt.executeQuery(query);
 			list = this.getResults(res);
 		} catch (Exception e) {
-			System.out.println("ERROR FOUND IN getAllPersonsDepthThree" + e.toString());
+			System.out.println(e.toString());
 		}
 		return list;
 	}
 
-	public List<Nodes> getAllPersonsDepthFour(String name) {
+	public List<Nodes> depthFour(String name) {
 		List<Nodes> list = new ArrayList();
 		try {
 			Connection connection = this.sqlCon.getConnection();
@@ -113,12 +110,12 @@ public class DBMapperSQL implements IMapper {
 			list = this.getResults(res);
 
 		} catch (Exception e) {
-			System.out.println("ERROR FOUND IN getAllPersonsDepthFour" + e.toString());
+			System.out.println(e.toString());
 		}
 		return list;
 	}
 
-	public List<Nodes> getAllPersonsDepthFive(String name) {
+	public List<Nodes> depthFive(String name) {
 		List<Nodes> list = new ArrayList();
 		try {
 			Connection connection = this.sqlCon.getConnection();
@@ -130,7 +127,7 @@ public class DBMapperSQL implements IMapper {
 			list = this.getResults(res);
 
 		} catch (Exception e) {
-			System.out.println("ERROR FOUND IN getAllPersonsDepthFive" + e.toString());
+			System.out.println(e.toString());
 		}
 		return list;
 	}

@@ -3,11 +3,7 @@ package data;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-/**
- * Hello world!
- *
- */
-public class DBConnectorSQL {
+public class DBConnector {
     private Connection connection = null;
 
     //Constants
@@ -15,7 +11,7 @@ public class DBConnectorSQL {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "Parkuras1996";
 
-    public DBConnectorSQL() throws Exception {
+    public DBConnector() throws Exception {
 
         Class.forName("com.mysql.cj.jdbc.Driver");
         this.connection = null;
